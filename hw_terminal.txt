@@ -69,6 +69,7 @@ Linux terminal (GitBash) commands
 20) вывести дату и время
 	command: date
 	result: Thu Jan  6 18:12:35     2022
+	
 =========
 
 Задание *
