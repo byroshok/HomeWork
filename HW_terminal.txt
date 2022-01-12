@@ -1,0 +1,93 @@
+Первое ДЗ
+Linux terminal (GitBash) commands
+1) Посмотреть где я 
+	command: pwd
+	result:/d
+2) Создать папку
+	command: mkdir HW_QA_1
+	result:созданная папка "HW_QA_1'"
+3) Зайти в папку
+	command: cd HW_QA_1/
+	result: ~/d/HW_QA_
+4) Создать 3 папки
+	command: mkdir Folder_1 Folder_2 Folder_3
+	result: созданны папки под названием ''Folder_1'','' Folder_2'','' Folder_3''
+5) Зайти в любоую папку
+	command: cd Folder_1
+	result: ~/d/HW_QA_1/Folder_1
+6) Создать 5 файлов (3 txt, 2 json)
+	command: touch {1..3}.txt {1..2}.json
+	result: 1.json  1.txt.json  2.txt  3.txt
+7) Создать 3 папки
+	command: mkdir  Folder_1_1 Folder_1_2 Folder_1_3
+	result:  созданны папки под названием  ''Folder_1_1'','' Folder_1_2'','' Folder_1_3''
+8. Вывести список содержимого папки
+	command: ls -la
+	result:1.json,1.txt,2.json,2.txt,3.txt,Folder_1_1/,Folder_1_2/Folder_1_3/
+9) + Открыть любой txt файл
+	command: vim 1.txt
+	result: окткрылся режим редактирования
+10) + написать туда что-нибудь, любой текст.
+	command: i
+	command: Hello,word))
+	result: введенный текст
+11) + сохранить и выйти.
+	command: esc
+	command: :wq
+	result: ~/d/HW_QA_1/Folder_1
+12) Выйти из папки на уровень выше
+	command: cd ..
+	result: ~/d/HW_QA_1
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+	command: mv 1.txt ../Folder_2/1.txt 1.json ../Folder_2/1.json
+	result: файлы перемещенны в папку ''Folder_2''
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+	command: cd ..
+	result: ~/d/HW_QA_1
+	command:cp 1.json ../Folder_1/1.json
+	command:cp 1.json ../Folder_1/1.json
+	result: файлы скопированны
+15) Найти файл по имени
+	command: find 1.txt
+	result:1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+	command: tail -f ../1.txt
+	result: Hello, word))
+	command: ctrl + z
+17) вывести несколько первых строк из текстового файла
+	command: head -2 ../1.txt
+	result: Hello, word))
+18) вывести несколько последних строк из текстового файла
+	command: tail -1 ../1.txt
+	result:Hello, word))
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+	command: less ../1.txt
+	result:
+	command: :wq
+20) вывести дату и время
+	command: date
+	result: Thu Jan  6 18:12:35     2022
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+	command: curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000" 
+	result: % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   185  100   185    0     0   1129      0 --:--:-- --:--:-- --:--:--  1134{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+cd d:/QA/HW_QA_1
+mkdir -p script_1/script_2
+cd script_1/script_2
+cd ..
+mkdir script{1..3}
+cd script1
+touch txt_script_file{1..3}.txt json_script_file{1..2}.json
+mkdir {1..3}SCRIPT
+ls
+mv txt_script_file2.txt json_script_file2.json ./2SCRIPT
